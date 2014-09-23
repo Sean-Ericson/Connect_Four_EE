@@ -4,6 +4,10 @@
     <logicalFolder name="HeaderFiles"
                    displayName="Header Files"
                    projectFiles="true">
+      <itemPath>Connect_Four_AI.hpp</itemPath>
+      <itemPath>Connect_Four_Game.hpp</itemPath>
+      <itemPath>Connect_Four_Graphics.hpp</itemPath>
+      <itemPath>Connect_Four_Main.hpp</itemPath>
     </logicalFolder>
     <logicalFolder name="ResourceFiles"
                    displayName="Resource Files"
@@ -57,6 +61,14 @@
           </linkerLibItems>
         </linkerTool>
       </compileType>
+      <item path="Connect_Four_AI.hpp" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="Connect_Four_Game.hpp" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="Connect_Four_Graphics.hpp" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="Connect_Four_Main.hpp" ex="false" tool="3" flavor2="0">
+      </item>
       <item path="main.cpp" ex="false" tool="1" flavor2="0">
       </item>
     </conf>
@@ -99,6 +111,14 @@
           </linkerLibItems>
         </linkerTool>
       </compileType>
+      <item path="Connect_Four_AI.hpp" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="Connect_Four_Game.hpp" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="Connect_Four_Graphics.hpp" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="Connect_Four_Main.hpp" ex="false" tool="3" flavor2="0">
+      </item>
       <item path="main.cpp" ex="false" tool="1" flavor2="0">
       </item>
     </conf>
