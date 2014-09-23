@@ -9,6 +9,7 @@
 #define	CONNECT_FOUR_GAME_HPP
 
 #include "Connect_Four_Main.hpp"
+#include <vector>
 
 const int COLS = 7;
 const int ROWS = 6;
@@ -21,6 +22,11 @@ enum Players
     Player1,
     Player2,
 };
+
+struct Move
+{
+    int player, column;
+}
 
 class Board
 {
