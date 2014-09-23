@@ -8,6 +8,12 @@
 #ifndef CONNECT_FOUR_GRAPHICS_HPP
 #define	CONNECT_FOUR_GRAPHICS_HPP
 
+#include <SFML/Audio.hpp>
+#include <SFML/Graphics.hpp>
+#include <SFML/System.hpp>
+#include <SFML/Window.hpp>
+
+#include "Connect_Four_Main"
 #include <vector>
 
 class WindowObject
@@ -26,11 +32,18 @@ class ConnectFourWindow
 {
 private:
     
-    
+    ConnectFourGame& game;
+    sf::RenderWindow window;
+    sf::Event event;
+    sf::View view;
     
 public:
     
+    ConnectFourWindow();
+    ~ConnectFourWindow();
     
+    bool update();
+    bool addObject;
 };
 
 #endif	/* CONNECT_FOUR_GRAPHICS_HPP */
