@@ -13,7 +13,7 @@
 #include <SFML/System.hpp>
 #include <SFML/Window.hpp>
 
-#include "Connect_Four_Main"
+#include "Connect_Four_Main.hpp"
 #include <vector>
 
 class WindowObject

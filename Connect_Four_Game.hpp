@@ -25,8 +25,8 @@ enum Players
 
 struct Move
 {
-    int player, column;
-}
+    int player, cloumn;
+};
 
 class Board
 {
