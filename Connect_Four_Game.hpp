@@ -31,23 +31,25 @@ struct Move
 class Board
 {
 private:
+    
     int     state[COLS][ROWS];
-    bool    fullCol[COLS];
-    bool    boardEmpty, boardFull;
     int     lastCol, lastRow;
 
 public:
+    
     Board();
+    ~Board();
     
     bool    boardFull(void);
-    bool    clearBoard(void);
+    bool    boardEmpty(void);
+    void    clearBoard(void);
     bool    columnFull(int col);
     int     getPiece(int col, int row);
     bool    placePiece(int col, int row, int player, bool replace = false);
 
     bool    boardFull(void){ return boardFull; }
-    int     getLastCol(void){ return lastCol; }
-    int     getLastRow(void){ return lastRow; }
+    int     lastCol(void){ return lastCol; }
+    int     lastRow(void){ return lastRow; }
     bool    isEmpty(void){ return boardEmpty; }
 };
 
@@ -63,6 +65,8 @@ public:
     Board   board;
 
     ConnectFourGame();
+    ~ConnectFourGame();
+    
     bool    addPoints(int player, int points);
     int     checkWin(int player);
     bool    dropPiece(int col, int player);

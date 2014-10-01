@@ -35,6 +35,7 @@ OBJECTDIR=${CND_BUILDDIR}/${CND_CONF}/${CND_PLATFORM}
 
 # Object Files
 OBJECTFILES= \
+	${OBJECTDIR}/Connect_Four_Game.o \
 	${OBJECTDIR}/main.o
 
 
@@ -61,6 +62,11 @@ LDLIBSOPTIONS=-L../../../../../SFML-2.1/lib -lsfml-audio-s-d -lsfml-network-s-d 
 ${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/connect_four_ee.exe: ${OBJECTFILES}
 	${MKDIR} -p ${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}
 	${LINK.cc} -o ${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/connect_four_ee ${OBJECTFILES} ${LDLIBSOPTIONS}
+
+${OBJECTDIR}/Connect_Four_Game.o: Connect_Four_Game.cpp 
+	${MKDIR} -p ${OBJECTDIR}
+	${RM} "$@.d"
+	$(COMPILE.cc) -O2 -DSFML_STATIC -I../../../../../SFML-2.1/include -I. -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/Connect_Four_Game.o Connect_Four_Game.cpp
 
 ${OBJECTDIR}/main.o: main.cpp 
 	${MKDIR} -p ${OBJECTDIR}

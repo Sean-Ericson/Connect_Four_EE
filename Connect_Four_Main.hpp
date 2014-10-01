@@ -12,5 +12,7 @@
 #include "Connect_Four_Game.hpp"
 #include "Connect_Four_AI.hpp"
 
+#include <stdexcept>
+
 #endif	/* CONNECT_FOUR_MAIN_HPP */
 
