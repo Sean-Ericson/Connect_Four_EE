@@ -14,6 +14,8 @@
 const int COLS = 7;
 const int ROWS = 6;
 const int TOP_ROW = 5;
+const int HUMAN = 0;
+const int AI = 1;
 
 enum Players
 {
@@ -25,7 +27,10 @@ enum Players
 
 struct Move
 {
-    int player, cloumn;
+    int player, column, row;
+    
+    Move(int p, int c, int r) : player(p), column(c), row(r)
+    {}
 };
 
 class Board
@@ -33,32 +38,31 @@ class Board
 private:
     
     int     state[COLS][ROWS];
-    int     lastCol, lastRow;
+    Move    lastMove;
 
 public:
     
     Board();
     ~Board();
     
-    bool    boardFull(void);
-    bool    boardEmpty(void);
+    bool    isFull(void);
+    bool    isEmpty(void);
     void    clearBoard(void);
     bool    columnFull(int col);
     int     getPiece(int col, int row);
     bool    placePiece(int col, int row, int player, bool replace = false);
 
-    bool    boardFull(void){ return boardFull; }
-    int     lastCol(void){ return lastCol; }
-    int     lastRow(void){ return lastRow; }
-    bool    isEmpty(void){ return boardEmpty; }
+    int     lastCol(void){ return lastMove.column; }
+    int     lastRow(void){ return lastMove.row; }
 };
 
 class ConnectFourGame
 {
 private:
-    int                 p1Score, p2Score, round; 
+    int                 p1Score, p2Score, round, p1Type, p2Type; 
     int                 roundWinner, activePlayer;
     bool                roundWon, newRound;
+    std::vector<Move>   moves;
     ConnectFourWindow&  cfWindow;
 
 public:
@@ -69,8 +73,8 @@ public:
     
     bool    addPoints(int player, int points);
     int     checkWin(int player);
-    bool    dropPiece(int col, int player);
-    bool    dropPieceAuto(int col, int player);
+    bool    dropPiece(int col, int player); //Returns row it lands in
+    //bool    dropPieceAuto(int col, int player);
     int     getScore(int player);
     bool    setNewRound(void);
     bool    setRoundWinner(int winner);
