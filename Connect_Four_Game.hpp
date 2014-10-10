@@ -8,7 +8,6 @@
 #ifndef CONNECT_FOUR_GAME_HPP
 #define	CONNECT_FOUR_GAME_HPP
 
-#include "Connect_Four_Main.hpp"
 #include <vector>
 
 const int COLS = 7;
@@ -19,18 +18,18 @@ const int AI = 1;
 
 enum Players
 {
-    Tie = -1,
-    NoPlayer,
-    Player1,
-    Player2,
+    TIE = -1,
+    NO_PLR,
+    PLR_1,
+    PLR_2,
 };
 
-struct Move
+class Move
 {
+public:
     int player, column, row;
-    
-    Move(int p, int c, int r) : player(p), column(c), row(r)
-    {}
+    Move();
+    Move(int p, int c, int r);
 };
 
 class Board
@@ -43,7 +42,6 @@ private:
 public:
     
     Board();
-    ~Board();
     
     bool    isFull(void);
     bool    isEmpty(void);
@@ -68,24 +66,24 @@ public:
     Board   board;
 
     ConnectFourGame();
-    ~ConnectFourGame();
     
     bool    addPoints(int player, int points);
-    int     checkWin(int player);
-    bool    dropPiece(int col, int player); //Returns row it lands in
+    int     checkWin(Move lastMove);
+    int     dropPiece(int col, int player); //Returns row it lands in
     //bool    dropPieceAuto(int col, int player);
+    Move    getLastMove(void);
+    int     getPlayerType(int player);
     int     getScore(int player);
     bool    setNewRound(void);
-    void    setPlayerType(int player, bool type);
+    void    setPlayerType(int player, int type);
     bool    setRoundWinner(int winner);
-    bool    setWindow(ConnectFourWindow& window);
 
     int     getActivePlayer(void){ return activePlayer; }
     int     getRounds(void){ return round; }
     int     getRoundWinner(void){ return roundWinner; }
     bool    isNewRound(void){ return newRound; }
     bool    roundIsWon(void){ return roundWon; }
-    void    switchPlayerTurn(void){ activePlayer = (activePlayer == Player1) ? Player2 : Player1; }
+    void    switchPlayerTurn(void){ activePlayer = (activePlayer == PLR_1) ? PLR_2 : PLR_1; }
     //void setRoundWon(bool won){ roundWon = won; }
 };
 

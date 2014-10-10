@@ -8,7 +8,11 @@
 #ifndef CONNECT_FOUR_AI_HPP
 #define	CONNECT_FOUR_AI_HPP
 
+#include "Connect_Four_Game.hpp"
 
+int randInt( int min, int max );
+
+int AIselectCol(Board board);
 
 #endif	/* CONNECT_FOUR_AI_HPP */
 
