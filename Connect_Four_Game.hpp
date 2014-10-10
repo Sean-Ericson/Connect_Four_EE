@@ -63,7 +63,6 @@ private:
     int                 roundWinner, activePlayer;
     bool                roundWon, newRound;
     std::vector<Move>   moves;
-    ConnectFourWindow&  cfWindow;
 
 public:
     Board   board;
@@ -77,6 +76,7 @@ public:
     //bool    dropPieceAuto(int col, int player);
     int     getScore(int player);
     bool    setNewRound(void);
+    void    setPlayerType(int player, bool type);
     bool    setRoundWinner(int winner);
     bool    setWindow(ConnectFourWindow& window);
 

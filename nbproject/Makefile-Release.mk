@@ -36,6 +36,7 @@ OBJECTDIR=${CND_BUILDDIR}/${CND_CONF}/${CND_PLATFORM}
 # Object Files
 OBJECTFILES= \
 	${OBJECTDIR}/Connect_Four_Game.o \
+	${OBJECTDIR}/Connect_Four_Graphics.o \
 	${OBJECTDIR}/main.o
 
 
@@ -67,6 +68,11 @@ ${OBJECTDIR}/Connect_Four_Game.o: Connect_Four_Game.cpp
 	${MKDIR} -p ${OBJECTDIR}
 	${RM} "$@.d"
 	$(COMPILE.cc) -O2 -DSFML_STATIC -I../../../../../SFML-2.1/include -I. -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/Connect_Four_Game.o Connect_Four_Game.cpp
+
+${OBJECTDIR}/Connect_Four_Graphics.o: Connect_Four_Graphics.cpp 
+	${MKDIR} -p ${OBJECTDIR}
+	${RM} "$@.d"
+	$(COMPILE.cc) -O2 -DSFML_STATIC -I../../../../../SFML-2.1/include -I. -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/Connect_Four_Graphics.o Connect_Four_Graphics.cpp
 
 ${OBJECTDIR}/main.o: main.cpp 
 	${MKDIR} -p ${OBJECTDIR}

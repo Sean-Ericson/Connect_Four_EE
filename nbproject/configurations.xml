@@ -17,6 +17,7 @@
                    displayName="Source Files"
                    projectFiles="true">
       <itemPath>Connect_Four_Game.cpp</itemPath>
+      <itemPath>Connect_Four_Graphics.cpp</itemPath>
       <itemPath>main.cpp</itemPath>
     </logicalFolder>
     <logicalFolder name="TestFiles"
@@ -67,6 +68,8 @@
       <item path="Connect_Four_Game.cpp" ex="false" tool="1" flavor2="0">
       </item>
       <item path="Connect_Four_Game.hpp" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="Connect_Four_Graphics.cpp" ex="false" tool="1" flavor2="0">
       </item>
       <item path="Connect_Four_Graphics.hpp" ex="false" tool="3" flavor2="0">
       </item>
@@ -119,6 +122,8 @@
       <item path="Connect_Four_Game.cpp" ex="false" tool="1" flavor2="0">
       </item>
       <item path="Connect_Four_Game.hpp" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="Connect_Four_Graphics.cpp" ex="false" tool="1" flavor2="0">
       </item>
       <item path="Connect_Four_Graphics.hpp" ex="false" tool="3" flavor2="0">
       </item>

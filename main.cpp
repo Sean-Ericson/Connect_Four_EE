@@ -5,15 +5,18 @@
  * Created on September 21, 2014, 2:51 PM
  */
 
+#include "Connect_Four_Main.hpp"
 #include <cstdlib>
 
-using namespace std;
 
-/*
- * 
- */
-int main(int argc, char** argv) {
+ConnectFourGame game;
+ConnectFourWindow window;
 
+int main(void) 
+{
+    
+    
+    
     return 0;
 }
 
