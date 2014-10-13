@@ -237,11 +237,11 @@ void ConnectFourWindow::handleKeyPress()
     if ( (event.key.code == sf::Keyboard::Down) && !game.roundIsWon() &&
          (game.getPlayerType(game.getActivePlayer()) == HUMAN) )
     {
-        if ( game.dropPiece(colSelectPos, game.getActivePlayer() ) != -1 )
+        if ( game.dropPiece(colSelectPos, game.getActivePlayer(), game.board ) != -1 )
         {
             //dropAnim( game.getLastMove() );
             colSelectPos = 3;
-            int result = game.checkWin(game.getLastMove());
+            int result = game.checkWin(game.getLastMove(), game.board);
             if (result > 0)
             {
                 game.addPoints(game.getActivePlayer(), result);
@@ -281,6 +281,33 @@ void ConnectFourWindow::handleKeyPress()
         else
             game.setPlayerType(PLR_2, HUMAN);
     }
+    
+    if (event.key.code == sf::Keyboard::Numpad1)
+        game.AIsearchDepth = 1;
+    
+    if (event.key.code == sf::Keyboard::Numpad2)
+        game.AIsearchDepth = 2;
+    
+    if (event.key.code == sf::Keyboard::Numpad3)
+        game.AIsearchDepth = 3;
+    
+    if (event.key.code == sf::Keyboard::Numpad4)
+        game.AIsearchDepth = 4;
+    
+    if (event.key.code == sf::Keyboard::Numpad5)
+        game.AIsearchDepth = 5;
+    
+    if (event.key.code == sf::Keyboard::Numpad6)
+        game.AIsearchDepth = 6;
+    
+    if (event.key.code == sf::Keyboard::Numpad7)
+        game.AIsearchDepth = 7;
+    
+    if (event.key.code == sf::Keyboard::Numpad8)
+        game.AIsearchDepth = 8;
+    
+    if (event.key.code == sf::Keyboard::Numpad9)
+        game.AIsearchDepth = 9;
 }
 
 void ConnectFourWindow::handleResize()
@@ -340,13 +367,16 @@ void ConnectFourWindow::runGame()
             while (window.pollEvent(event)){}
         }
         
+        update();
+        
         if ( (!game.roundIsWon()) && (game.getPlayerType(game.getActivePlayer()) == AI) )
         {
-            if ( game.dropPiece(AIselectCol(game.board), game.getActivePlayer() ) != -1 )
+            //int depth = (game.getActivePlayer() == PLR_1) ? 2: 6;
+            if ( game.dropPiece( AIselectCol( game.board, game.getActivePlayer(), game.AIsearchDepth ), game.getActivePlayer(), game.board ) != -1 )
             {
                 //dropAnim( game.getLastMove() );
                 colSelectPos = 3;
-                int result = game.checkWin(game.getLastMove());
+                int result = game.checkWin(game.getLastMove(), game.board);
                 if (result > 0)
                 {
                     game.addPoints(game.getActivePlayer(), result);
@@ -365,7 +395,7 @@ void ConnectFourWindow::runGame()
             }
         }
         
-        update();
+        //update();
     }
 }
 
